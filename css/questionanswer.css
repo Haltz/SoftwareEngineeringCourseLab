@@ -59,70 +59,35 @@ section {
 }
 
 /* Header */
-.codrops-header {
+.questionanswer-header {
 	margin: 0 auto;
 	padding: 3em 2em;
 	text-align: center;
 }
 
-.codrops-header h1 {
+.questionanswer-header h1 {
 	margin: 0 auto;
 	font-weight: 800;
 	font-size: 3.75em;
 	line-height: 1;
 }
 
-.codrops-header h1 span {
+.questionanswer-header h1 span {
 	display: block;
 	font-size: 50%;
 	font-weight: 400;
 	padding-top: 0.325em;
 }
 
-.codrops-links {
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 0.69em;
-	line-height: 2.2;
-	padding: 1.61em 5em;
-}
-
-.codrops-links a {
-	display: inline-block;
-	padding: 0 1em;
-	text-decoration: none;
-	letter-spacing: 1px;
-}
-
-.codrops-icon:before {
-	margin: 0 4px;
-	text-transform: none;
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-family: 'codropsicons';
-	line-height: 1;
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-}
-
-.codrops-icon-drop:before {
-	content: "\e001";
-}
-
-.codrops-icon-prev:before {
-	content: "\e004";
-}
-
 /* Demo Buttons Style */
-.codrops-demos {
+.questions {
 	font-size: 1em;
 	max-width: 1200px;
 	margin: 3em auto 5em;
 	padding: 2em 10em 0;
 }
 
-.codrops-demos>a {
+.questions>div>a {
 	display: inline-block;
 	margin: 0.75em;
 	padding: 1.35em 1.1em;
@@ -136,7 +101,7 @@ section {
 	border-radius: 20px/50px;
 }
 
-.codrops-demos>a.current-demo {
+.questions>a.current-demo {
 	background: #c94e50;
 	color: #fffce1;
 }
@@ -203,11 +168,11 @@ body .container .content-wrap .content {
 		font-size: 80%;
 	}
 
-	.codrops-header h1 {
+	.questionanswer-header h1 {
 		font-size: 2.5em;
 	}
 
-	.codrops-demos {
+	.questions {
 		max-width: 900px;
 		padding: 2em 2em 0;
 	}
@@ -218,13 +183,208 @@ body .container .content-wrap .content {
 }
 
 @media screen and (max-width: 25em) {
-
-	.codrops-icon {
-		font-size: 250%;
-	}
-
-	.codrops-icon span {
-		display: none;
-	}
-
 }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+q {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+button,
+input {
+    line-height: normal;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+

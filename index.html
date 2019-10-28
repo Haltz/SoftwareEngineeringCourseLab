@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css/indexbase.css" />
+	<link rel="stylesheet" type="text/css" href="css/indexdemo.css" />
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+	<script>
+		document.documentElement.className = "js";
+		var supportsCssVars = function () {
+			var e, t = document.createElement("style");
+			return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window
+				.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+		};
+		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+	</script>
+</head>
+
+<body class="gridmenu">
+	<main style="color: #1d3c41;">
+		<div class="content content--fixed">
+			<button class="menu-trigger"><h1>+ info</h1></button>
+		</div>
+		<div id="content-1" class="content content--switch content--switch-current">
+			<h2 class="content__title">Children Learning</h2>
+			<span><h1>Click the info in the bottom left to get more.</h1></span>
+			<div class="content__date">1-31 October 2019</div>
+			<div class="content__location">HUST, CN</div>
+			<div class="content__author">Lee Chen Huang</div>
+		</div>
+		<div id="content-2" class="content content--switch">
+			<h2 class="content__title">Personal infomation</h2>
+			<p class="content__text">Description</p>
+		</div>
+		<div id="content-3" class="content content--switch">
+			<h2 class="content__title">Quiz</h2>
+			<p class="content__text">Description</p>
+		</div>
+		<div id="content-4" class="content content--switch">
+			<h2 class="content__title">Review</h2>
+			<p class="content__text">Description</p>
+		</div>
+		<div id="content-5" class="content content--switch">
+			<h2 class="content__title">Relax</h2>
+			<p class="content__text">Description</p>
+		</div>
+		<div id="content-6" class="content content--switch">
+			<h2 class="content__title">Home</h2>
+			<p class="content__text">Description</p>
+		</div>
+		<nav class="grim">
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--1"></div>
+			</div>
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--2"></div>
+			</div>
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--6"></div>
+				<!-- <div class="grim__item-content">
+					<div class="grim__item-inner">
+						<button class="menu-trigger menu-trigger--close">- close</button>
+					</div>
+				</div> -->
+			</div>
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--4"></div>
+			</div>
+			<div class="grim__item">
+				<!-- <div class="grim__item-bg grim__item-bg--5"></div> -->
+				<!-- <a href="#content-1" class="grim__link grim__item-content">
+					<div class="grim__item-inner">
+						<h3 class="grim__item-title">home</h3>
+					</div>
+				</a> -->
+				<div class="grim__item-bg grim__item-bg--3"></div>
+				<div class="grim__item-content">
+					<div class="grim__item-inner">
+						<button class="menu-trigger menu-trigger--close">- close</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--6"></div>
+				<a href="#content-4" class="grim__link grim__item-content">
+					<div class="grim__item-inner">
+						<h3 class="grim__item-title">Review</h3>
+						<span class="grim__item-desc">Look back and go on.</span>
+					</div>
+				</a>
+				
+			</div>
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--7"></div>
+				<a href="#content-6" class="grim__link grim__item-content">
+					<div class="grim__item-inner">
+						<h3 class="grim__item-title">Home</h3>
+						<span class="grim__item-desc">Go to home page.</span>
+					</div>
+				</a>
+			</div>
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--8"></div>
+				<a href="#content-3" class="grim__link grim__item-content">
+					<div class="grim__item-inner">
+						<h3 class="grim__item-title">Quiz</h3>
+						<span class="grim__item-desc">Take a quiz!</span>
+					</div>
+				</a>
+			</div>
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--9"></div>
+				<a href="#content-4" class="grim__link grim__item-content">
+					<div class="grim__item-inner">
+						<h3 class="grim__item-title">Relax</h3>
+						<span class="grim__item-desc">Have a break.</span>
+					</div>
+				</a>
+			</div>
+			<div class="grim__item">
+				<div class="grim__item-bg grim__item-bg--10" data-duration="1000" data-easing="easeOutQuint"></div>
+				<a href="#content-6" class="grim__link grim__item-content">
+					<div class="grim__item-inner">
+						<h3 class="grim__item-title">User</h3>
+						<span class="grim__item-desc">Who you are?</span>
+					</div>
+				</a>
+			</div>
+		</nav>
+	</main>
+	<script src="js/index.js"></script>
+	<script src="js/anime.min.js"></script>
+	<script src="js/gridmenu.js"></script>
+</body>
+
+</html>

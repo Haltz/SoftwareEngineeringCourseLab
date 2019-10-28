@@ -16,3 +16,52 @@ $(document).ready(function () {
         }
     });
 });
+
+function login(param) {
+    alert("login");
+    var name = param["name"];
+    var email = param["email"];
+    var password = param["password"];
+    $.ajax({
+        type: "POST",
+        url: "",
+        data: {
+            name: name,
+            email: email,
+            password: password
+        },
+        dataType: "json",
+        success: function (response) {
+            if (response == "success") {
+                alert("login success");
+            }
+        }
+    });
+}
+location.href = 1;
+
+function signup(param) {
+    alert("signup");
+    var name = param["name"];
+    var email = param["email"];
+    var password = param["password"];
+    $.ajax({
+        type: "POST",
+        url: "",
+        data: {
+            name: name,
+            email: email,
+            password: password
+        },
+        dataType: "json",
+        success: function (response) {
+            if (response == "success") {
+                alert("signup success");
+            }
+        }
+    })
+}
+
+function setcookie (name, value) {
+    
+  }
