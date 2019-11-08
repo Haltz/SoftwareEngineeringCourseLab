@@ -1,6 +1,7 @@
 from tornado import web,ioloop,httpserver
 import json, urllib3
 import time,timeit
+import os
 
 state=0 #记录登录状态
 now_user_name=''  #现在的用户名
@@ -12,8 +13,8 @@ class IndexHandler(web.RequestHandler):
     # 重写get处理方式
     def get(self,*args,**kwargs):
         # 想客户端发送一个数据
-        self.render("index.html",ret='ret')
-    
+        self.render("index.html")
+
     def post(self,*args,**kwargs):
         name = self.get_argument('name')
         password = self.get_argument('password')
@@ -46,6 +47,8 @@ class PersonHandler(web.RequestHandler):
     def get(self,*args,**kwargs):
         self.render("person.html")
 
+settings={
+    'template_path':'templates','static_path':'static','static_url_prefix':'/static/', }
 #设置路由
 application = web.Application([
     (r'/index', IndexHandler),
@@ -53,8 +56,9 @@ application = web.Application([
     (r'/questionanswer', QuestionanswerHandler),
     (r'/relax', RelaxHandler),
     (r'/review', ReviewHandler),
-        ],
+        ],**settings
     )
+
 
 if __name__ == '__main__':
     http_server=httpserver.HTTPServer(application)

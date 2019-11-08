@@ -1,0 +1,69 @@
+.relaxcontainer {
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-color: black;
+    border-radius: 25%;
+}
+
+.personcontainer {
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-color: black;
+}
+
+.reviewcontainer {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-color: black;
+}
+
+
+table {
+    table-layout: fixed;
+    empty-cells: show;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td {
+    height: 30px;
+}
+
+table h1,
+table h2,
+table h3 {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.table {
+    border: 1px solid #cad9ea;
+    color: #666;
+    background: white;
+}
+
+.table th {
+    background-repeat: repeat-x;
+    height: 30px;
+    width: 100px;
+}
+
+.table td {
+    background-repeat: repeat-x;
+    height: 30px;
+    width: 200px;
+}
+
+.table td,
+.table th {
+    border: 1px solid #cad9ea;
+    padding: 0 1em 0;
+}
+
+.table tr.alter {
+    background-color: #f5fafe;
+}
