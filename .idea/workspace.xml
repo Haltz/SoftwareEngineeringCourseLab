@@ -2,72 +2,114 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b9bf7d7-3fb7-4a2b-9150-42d6b5192e31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/ (2).DS_Store" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/animate-custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/demo2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/demologin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/dropdown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/BebasNeue-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/BebasNeue-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/BebasNeue-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/BebasNeue-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/Dharma Type Font License.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/fontomas-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/fontomas-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/fontomas-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/fontomas-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/franchise-bold-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/franchise-bold-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/franchise-bold-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/fonts/franchise-bold-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/general.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/indexbase.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/indexdemo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/menu_component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/menu_default.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/menu_sideslide.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/questionanswer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/sign.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/step.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/table.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/test.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/font-awesome-4.2.0/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/ImageAttribution.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/lock.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/anime.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/charming.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/gridmenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/imagesloaded.pkgd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/jquery-3.1.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/menu2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/menuslide.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/questionanswer_classie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/questions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/snap.svg-min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/html.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/html.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ER图.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ER图.vsdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/ (2).DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/animate-custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/demo2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/demologin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/dropdown.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/BebasNeue-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/BebasNeue-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/BebasNeue-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/BebasNeue-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/Dharma Type Font License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/fontomas-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/fontomas-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/fontomas-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/fontomas-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/franchise-bold-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/franchise-bold-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/franchise-bold-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/fonts/franchise-bold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/general.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/indexbase.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/indexdemo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/menu_component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/menu_default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/menu_sideslide.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/questionanswer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/sign.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/step.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/font-awesome-4.2.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ImageAttribution.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/lock.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces.md" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/anime.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/charming.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/gridmenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/imagesloaded.pkgd.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-3.1.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/menu2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/menuslide.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/questionanswer_classie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/questions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/snap.svg-min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/person.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/person.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questionanswer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/questionanswer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relax.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/relax.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/ (2).DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/animate-custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/animate-custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/demo2.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/demo2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/demologin.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/demologin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/indexdemo.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/indexdemo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/menu_sideslide.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/menu_sideslide.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/questionanswer.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/questionanswer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/anime.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/anime.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/gridmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/gridmenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/imagesloaded.pkgd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/imagesloaded.pkgd.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/jquery-3.1.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery-3.1.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/menu2.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/menu2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/menuslide.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/menuslide.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/questionanswer_classie.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/questionanswer_classie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/snap.svg-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/snap.svg-min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/person.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/person.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/questionanswer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/questionanswer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/relax.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/relax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="TestsForChildren" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -79,12 +121,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="ProjectId" id="1Rz50hLaKjCecbYPO0Z68RXozWP" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -120,6 +179,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -136,7 +196,7 @@
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\18724\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -147,6 +207,11 @@
       <updated>1570656862713</updated>
       <workItem from="1570656870237" duration="611000" />
       <workItem from="1570702704318" duration="3000" />
+      <workItem from="1573280769553" duration="409000" />
+      <workItem from="1573281191423" duration="2215000" />
+      <workItem from="1573283424608" duration="381000" />
+      <workItem from="1573283822817" duration="7028000" />
+      <workItem from="1573290884507" duration="259000" />
     </task>
     <servers />
   </component>
@@ -165,5 +230,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TestsForChildren$main.coverage" NAME="main Coverage Results" MODIFIED="1573290903445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

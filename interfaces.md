@@ -1,7 +1,17 @@
-# interfaces
+# 接口声明
 
-| Function Name | use | para | return |
-|--------|--------|--------|--------|
-|usersignin|用户登录| task : "undefined" <br> name: <br> password: <br>|
-|adminsignin|管理员登录| task : "undefined" <br> name: <br> password: <br>|
-|signupf|注册| task : "undefined" <br> name: <br> password: <br>|
+- [ ] login
+- [ ] todefined
+
+# 定义
+
+## login
+
+- 参数
+    - task: login / signup
+    - username: str
+    - password: str
+    - email: str (***Only task is signup***)
+    - repeat_password: str (***Only task is signup***)
+- 返回
+    - result: "success" / "failure"

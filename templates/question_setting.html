@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap 实例</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function request_questions() {
+            var gradesel = document.getElementById('grade');
+            var gradeindex = gradesel.selectedIndex;
+            var grade = gradesel.options[gradeindex].text;
+            var difsel = document.getElementById('difficulty');
+            var difindex = difsel.selectedIndex;
+            var dif = difsel.options[difindex].text;
+            var modesel = document.getElementById('mode');
+            var modeindex = modesel.selectedIndex;
+            var mode = modesel.options[modeindex].text;
+            url = 'questionanswer.html?grade=' + grade + "&difficulty=" + dif + "&mode=" + mode;
+            window.location.href = url;
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>选择你的题目设置</h2>
+        <p>选择你的年级</p>
+        <form>
+            <div class="form-group">
+                <select class="form-control" id="grade">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <br>
+            </div>
+        </form>
+        <p>选择你的难度</p>
+        <form>
+            <div class="form-group">
+                <select class="form-control" id="difficulty">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <br>
+            </div>
+        </form>
+        <p>选择题目类型</p>
+        <form>
+            <div class="form-group">
+                <select class="form-control" id="mode">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <br>
+            </div>
+        </form>
+        <input type="button" value="提交" onclick="request_questions()">
+    </div>
+
+</body>
+
+</html>

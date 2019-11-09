@@ -1,67 +1,53 @@
 $(document).ready(function () {
-    //$('#username').focus();
-
-    $('#submit').click(function () {
-
-        event.preventDefault(); // prevent PageReLoad
-
-        var ValidEmail = $('#username').val() === 'invitado'; // User validate
-        var ValidPassword = $('#password').val() === 'hgm2015'; // Password validate
-
-        if (ValidEmail === true && ValidPassword === true) { // if ValidEmail & ValidPassword
-            $('.valid').css('display', 'block');
-            window.location = "http://arkev.com"; // go to home.html
-        } else {
-            $('.error').css('display', 'block'); // show error msg
-        }
-    });
+    alert("what?");
 });
 
 function login(param) {
-    alert("login");
-    var name = param["name"];
-    var email = param["email"];
-    var password = param["password"];
+    var username = param.username;
+    var password = param.password;
     $.ajax({
         type: "POST",
-        url: "",
+        url: "/login",
         data: {
-            name: name,
-            email: email,
+            name: username,
             password: password
         },
         dataType: "json",
         success: function (response) {
-            if (response == "success") {
-                alert("login success");
-            }
+            console.log(response);
         }
     });
 }
-location.href = 1;
+
+// location.href = 1;
 
 function signup(param) {
-    alert("signup");
-    var name = param["name"];
-    var email = param["email"];
-    var password = param["password"];
+    var name = param.username;
+    var email = param.email;
+    var passwd = param.password;
+    var repeat_passwd = param.repeat_password;
     $.ajax({
         type: "POST",
         url: "",
         data: {
             name: name,
             email: email,
-            password: password
+            password: passwd,
+            repeat_passwd: repeat_passwd
         },
         dataType: "json",
         success: function (response) {
-            if (response == "success") {
+            if (response.result == "success") {
                 alert("signup success");
             }
         }
     })
 }
 
-function setcookie (name, value) {
-    
-  }
+//
+// function keeplogin() {
+//     name
+// }
+
+
+
