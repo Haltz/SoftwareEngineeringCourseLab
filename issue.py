@@ -65,6 +65,34 @@ def issues(grade,mode):
             else :
                 return add_sub_1w ()
     #3年级
-
+    else:
+        # 简单模式
+        if mode == 'easy':
+            if r <= 2:
+                return mix_100_3()
+            elif r <= 7:
+                return add_sub_1k ()
+            else:
+                return mul_2_1 ()
+        # 普通模式
+        elif mode == 'normal':
+            if r <= 1:
+                return add_sub_1k ()
+            elif r <= 4:
+                return mul_2_1 ()
+            elif r <= 7:
+                return  mul_2_2 ()
+            else:
+                return div_3_1 ()
+        # 困难模式
+        else:
+            if r <= 2:
+                return mul_2_1 ()
+            elif r <= 5:
+                return mul_2_2 ()
+            elif r <= 9:
+                return div_3_1 ()
+            else:
+                return mix_2()
 
 
