@@ -43,8 +43,8 @@ class QuestionanswerHandler(web.RequestHandler):
     #生成题目并传到前端
         sk={}
         ak={}
-        for i in range(1,chose[number]+1):
-            skak=issue.issues(chose[grade],chose[mode])
+        for i in range(1,chose['number']+1):
+            skak=issue.issues(chose['grade'],chose['mode'])
             sk[i]=skak['sk']
             ak[i]=skak['ak']
         self.write(sk)
@@ -55,10 +55,10 @@ class QuestionanswerHandler(web.RequestHandler):
     #计时结束
     #批改答案
         error_amount=0
-        for i in range(1, chose[number] + 1):
+        for i in range(1, chose['number'] + 1):
             if student_ak[i]!=ak[i]:
                 error_amount+=1
-        accuracy=1-float(error_amount)/float(chose[number])
+        accuracy=1-float(error_amount)/float(chose['number'])
         if accuracy>=0.9:
             rate='A'
         elif accuracy>=0.8:
