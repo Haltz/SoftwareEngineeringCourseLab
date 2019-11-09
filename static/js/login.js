@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    alert("what?");
+    alert("what the fuck?");
 });
 
 function login(param) {

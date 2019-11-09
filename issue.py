@@ -2,7 +2,7 @@ from san import*
 from function import*
 from random import *
 
-def issue(grade,mode):
+def issues(grade,mode):
     r = randint(0, 10)
     #1年级
     if grade==1:

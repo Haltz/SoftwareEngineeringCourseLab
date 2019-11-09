@@ -1,8 +1,6 @@
 from random import *
-import datetime
-
 #1000以内加减法(含负数) 返回值:{sk:式子显示的字符串,ak:答案字符}
-def add_sub_1w () :
+def add_sub_1k () :
     first = randint(1, 1000)
     second = randint(1, 1000)
     op = randint(0, 2)  # 判断是加法还是减法,0是加法，1是减法
@@ -108,4 +106,34 @@ def div_3_1 ():
         str_ = str(first) + "÷" + str(second) + "=" + "__"
     return{"sk": str_, "ak": want}
 
-#3位除以1位 返回值:{sk:式子显示的字符串,ak:答案字符}
+#3个数的混合四则运算 返回值:{sk:式子显示的字符串,ak:答案字符}
+def mix_2():
+    first = randint(10, 99)
+    second = randint(10, 99)
+    third = randint(10, 99)
+    chp = randint(0, 5) # 运算符号
+    if chp == 0:
+        ans = first + second - third
+        want = str(ans)
+        str_ = str(first) + "+" + str(second) + "-" + str(third) + "=" + "__"
+    elif chp == 1:
+        ans = first * (second + third)
+        want = str(ans)
+        str_ = str(first) + "*" + "(" + str(second) + "+" + str(third) + ")" + "=" + "__"
+    elif chp == 2:
+        ans = (first - second) * third
+        want = str(ans)
+        str_ = "(" + str(first) + "-" + str(second) + ")" + "*" + str(third) + "=" + "__"
+    elif chp == 3:
+        ans = first - second + third
+        want = str(ans)
+        str_ = str(first) + "-" + str(second) + "+" + str(third) + "=" + "__"
+    elif chp == 4:
+        ans = first * (second - third)
+        want = str(ans)
+        str_ = str(first) + "*" + "(" + str(second) + "-" + str(third) + ")" + "=" + "__"
+    else:
+        ans = (first - second) * third
+        want = str(ans)
+        str_ = "(" + str(first) + "-" + str(second) + ")" + "*" + str(third) + "=" + "__"
+    return{"sk": str_, "ak": want}
