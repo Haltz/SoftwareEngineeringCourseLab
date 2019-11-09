@@ -1,7 +1,7 @@
 from random import *
 import datetime
 mitime=datetime.datetime.now().microsecond
-random.seed(mitime)  #以当前时间的毫秒为种子
+seed(mitime)  #以当前时间的毫秒为种子
 
 # 5以内加减法不含0 返回值:{'sk':题目,'ak':答案}
 def add_sub_5():

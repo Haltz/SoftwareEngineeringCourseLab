@@ -1,7 +1,7 @@
 from tornado import web,ioloop,httpserver
 import json, urllib3
 import time,timeit
-from issue import*
+import issue
 import os
 
 state=0 #记录登录状态
@@ -44,7 +44,7 @@ class QuestionanswerHandler(web.RequestHandler):
         sk={}
         ak={}
         for i in range(1,chose[number]+1):
-            skak=issue(chose[grade],chose[mode])
+            skak=issue.issues(chose[grade],chose[mode])
             sk[i]=skak['sk']
             ak[i]=skak['ak']
         self.write(sk)
