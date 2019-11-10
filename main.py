@@ -8,7 +8,6 @@ from zhuce import *
 
 state = 0  # 记录登录状态
 now_user_name = ''  # 现在的用户名
-now_user_id = 0
 
 
 # 定义视图处理函数
@@ -28,6 +27,9 @@ class IndexHandler(web.RequestHandler):
 
 # 登录和注册数据怎么区分？
 class LoginHandler(web.RequestHandler):
+
+
+
     def get(self, *args, **kwargs):
         # 想客户端发送一个数据
         self.render("login.html", ret='ret')
@@ -44,24 +46,31 @@ class LoginHandler(web.RequestHandler):
         应该返回：
             dict类型，key应包含'result':str，值应为"success"或者其他字符串和None
         '''
-        login = self.get_argument('login')
-        signup = self.get_argument('signup')
-        # 调用数据库函数检查密码是否正确
-        login_result = denglu(login['username'], login['password'])
-        if (login_result == 0):
-            login_ret = {"result": "success"}
-            state = 1
-            now_username = login['username']
+        task=self.get_argument('task')
+        if task=='login':
+            name=self.get_argument('name')
+            password=self.get_argument('password')
+            result=denglu(name,password)
+            if result==0:
+                ret = {'result': 'success'}
+                state = 1
+                now_user_name = 'name'
+            else:
+                ret = {'result': 'fail'}
         else:
-            login_ret = {"result": "fail"}
-        self.write(login_ret)
-        # 将注册信息加入数据库
-        signup_result = zhuce(signup['username'], signup['password'], signup['email'])
-        if (login_result == 0):
-            signup_ret = {"result": "success"}
-        else:
-            signup_ret = {"result": "fail"}
-        self.write(signup_ret)
+            name = self.get_argument('name')
+            password = self.get_argument('password')
+            email=self.get_argument('email')
+            repeat_password=self.get_argument('repeat_password')
+            if password!=repeat_password:
+                ret = {"result": "fail"}
+            else:
+                result = zhuce(name, password, email)
+                if result==0:
+                    ret = {'result': 'success'}
+                else:
+                    ret = {'result': 'fail'}
+        self.write(ret)
 
 
 # # 做题页面
@@ -271,6 +280,22 @@ application = web.Application([
 )
 
 if __name__ == '__main__':
+        #
+        ## 创建表
+        #con = pymysql.connect("127.0.0.1", "root", "lxt123", charset='utf8')
+
+        #cur = con.cursor()
+        ## 开始建库
+        ## cur.execute("create database awesome character set utf8;")
+        ## 使用库
+        #cur.execute('use awesome;')
+        ## 建表
+        #cur.execute('''
+        #     CREATE TABLE INFOM(id int unsigned primary key auto_increment not null,
+        #     user_name CHAR(20) NOT NULL,passw CHAR(20))
+        #    ''')
+        #cur.close()
+        #con.close()
     http_server = httpserver.HTTPServer(application)
     http_server.listen(8080)
     ioloop.IOLoop.current().start()
