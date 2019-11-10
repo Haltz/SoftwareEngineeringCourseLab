@@ -7,11 +7,11 @@
     <meta name="description" content="Login and Registration Panel"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Lee Chen Huang"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/demologin.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/animate-custom.css"/>
-    <script src="/static/js/jquery-3.1.1.min.js"></script>
-    <script src="/static/js/jquery.cookie.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/demologin.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/style.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/animate-custom.css')}}"/>
+    <script src="{{static_url('js/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{static_url('js/jquery.cookie.js')}}"></script>
     <script src="{{static_url('js/login.js')}}" type="text/javascript"></script>
 </head>
 
@@ -26,7 +26,7 @@
             <a class="hiddenanchor" id="tologin"></a>
             <div id="wrapper">
                 <div id="login" class="animate form">
-                    <form action="" autocomplete="on">
+                    <form autocomplete="on">
                         <h1>Log in</h1>
                         <p>
                             <label for="username" class="uname" data-icon="u">

@@ -2,55 +2,61 @@
 <html lang="en" class="no-js">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Relax</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="static/css/questionanswer.css" />
-	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="static/css/menu_sideslide.css" />
-	<link rel="stylesheet" type="text/css" href="static/css/general.css" />
-	<script src="static/js/questionanswer_classie.js"></script>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Relax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/questionanswer.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{static_url('fonts/font-awesome-4.2.0/css/font-awesome.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/menu_sideslide.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/general.css')}}"/>
+    <script src="{{static_url('js/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{static_url('js/jquery.cookie.js')}}"></script>
+    <script src="{{static_url('js/questionanswer_classie.js')}}"></script>
+    <script src="{{static_url('js/relax.js')}}"></script>
 </head>
 
 <body>
-	<div class="container" style="display: block">
-		<div class="menu-wrap">
-			<nav class="menu">
-				<div class="icon-list">
-					<a href="#"><i class="fa fa-fw fa-star-o"></i><span>个人信息</span></a>
-					<a href="#"><i class="fa fa-fw fa-star-o"></i><span>开始测验</span></a>
-					<a href="#"><i class="fa fa-fw fa-star-o"></i><span>课后休闲</span></a>
-					<a href="#"><i class="fa fa-fw fa-star-o"></i><span>错题集</span></a>
-				</div>
-			</nav>
-			<button class="close-button" id="close-button">Close Menu</button>
-		</div>
-		<button class="menu-button" id="open-button">Open Menu</button>
-		<div class="content-wrap">
-			<div class="content">
-				<header class="questionanswer-header">
-					<h1>Children Learning <span>Have fun and study harder!</span></h1>
-				</header>
-				<div class="relaxcontainer" style="font-family: STXihei, '华文细黑', 'Microsoft YaHei', '微软雅黑';">
-					<textarea style="border: solid black; width:100%; margin-top: 20%; height: 350px; border-radius: 25%;" readonly>
-						给大家表演一手熊猫上树
-					</textarea>
-					<input type="button" value="看个小故事吧！"
-						style="width: 100%; margin: 15px auto; border-radius: 50%;padding: 10px;">
-					<input type="button" value="一起来猜一猜脑筋急转弯！"
-						style="width: 100%; margin: 15px auto; border-radius: 50%;padding: 10px;">
-					<input type="button" value="听个小笑话！"
-						style="width: 100%; margin: 15px auto; border-radius: 50%;padding: 10px;">
-					
+<div class="container" style="display: block">
+    <div class="menu-wrap">
+        <nav class="menu">
+            <div class="icon-list">
+                <a href="/person"><i class="fa fa-fw fa-star-o"></i><span>个人信息</span></a>
+                <a href="/questionsetting"><i class="fa fa-fw fa-star-o"></i><span>开始测验</span></a>
+                <a href="/relax"><i class="fa fa-fw fa-star-o"></i><span>课后休闲</span></a>
+                <a href="/review"><i class="fa fa-fw fa-star-o"></i><span>错题集</span></a>
+            </div>
+        </nav>
+        <button class="close-button" id="close-button">Close Menu</button>
+    </div>
+    <button class="menu-button" id="open-button">Open Menu</button>
+    <div class="content-wrap">
+        <div class="content">
+            <header class="questionanswer-header">
+                <h1>Children Learning <span>Have fun and study harder!</span></h1>
+            </header>
+            <div class="relaxcontainer" style="font-family: STXihei, '华文细黑', 'Microsoft YaHei', '微软雅黑';">
+                <div style="border: solid black; width:70%; height: 350px; margin: 0 auto; border-radius: 25%;background-color: whitesmoke;">
+                    <p><br><br><br><br>
+                    <p>
+                    <p id="text-content" style="width: 70%; height: 70%; margin: 0 auto; text-align-all: center;">
+                        给大家表演一手熊猫上树</p>
+                </div>
+                <input type="button" value="看个小故事吧！" onclick="story()"
+                       style="width: 100%; margin: 15px auto; border-radius: 50%;padding: 10px;">
+                <input type="button" value="一起来猜一猜脑筋急转弯！" onclick="twist()"
+                       style="width: 100%; margin: 15px auto; border-radius: 50%;padding: 10px;">
+                <input type="button" value="听个小笑话！" onclick="joke()"
+                       style="width: 100%; margin: 15px auto; border-radius: 50%;padding: 10px;">
 
-				</div>
-			</div>
-		</div>
-		<!-- /content-wrap -->
-	</div>
-	<!-- /container -->
-	<script src="static/js/menuslide.js"></script>
+
+            </div>
+        </div>
+    </div>
+    <!-- /content-wrap -->
+</div>
+<!-- /container -->
+<script src="{{static_url('js/menuslide.js')}}"></script>
 </body>
 
 </html>

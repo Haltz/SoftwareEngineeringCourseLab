@@ -2,11 +2,12 @@
 <html>
 
 <head>
-    <title>Bootstrap 实例</title>
+    <title>问题设置选择</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{static_url('js/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{static_url('js/jquery.cookie.js')}}"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
@@ -20,7 +21,7 @@
             var modesel = document.getElementById('mode');
             var modeindex = modesel.selectedIndex;
             var mode = modesel.options[modeindex].text;
-            url = 'questionanswer.html?grade=' + grade + "&difficulty=" + dif + "&mode=" + mode;
+            url = '/questionanswer?grade=' + grade + "&difficulty=" + dif + "&mode=" + mode;
             window.location.href = url;
         }
     </script>
@@ -28,9 +29,9 @@
 
 <body>
 
-    <div class="container">
-        <h2>选择你的题目设置</h2>
-        <p>选择你的年级</p>
+    <div class="container" style="width: 70%">
+        <h1 style="width: 100%; margin: 0 auto; text-align: center">选择你的题目设置</h1>
+        <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择你的年级</h5>
         <form>
             <div class="form-group">
                 <select class="form-control" id="grade">
@@ -42,7 +43,7 @@
                 <br>
             </div>
         </form>
-        <p>选择你的难度</p>
+        <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择你的难度</h5>
         <form>
             <div class="form-group">
                 <select class="form-control" id="difficulty">
@@ -54,7 +55,7 @@
                 <br>
             </div>
         </form>
-        <p>选择题目类型</p>
+        <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择题目类型</h5>
         <form>
             <div class="form-group">
                 <select class="form-control" id="mode">
@@ -66,7 +67,7 @@
                 <br>
             </div>
         </form>
-        <input type="button" value="提交" onclick="request_questions()">
+        <input type="button" value="提交" onclick="request_questions()" style="width:100%; margin: 0 auto;">
     </div>
 
 </body>

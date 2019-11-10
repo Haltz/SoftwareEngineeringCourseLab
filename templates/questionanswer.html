@@ -2,59 +2,57 @@
 <html lang="en" class="no-js">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Questions</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-	<link rel="stylesheet" type="text/css" href="static/css/questionanswer.css" />
-	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="static/css/menu_sideslide.css" />
-	<script src="static/js/jquery-3.1.1.min.js"></script>
-	<script src="static/js/questionanswer_classie.js"></script>
-	<script src="static/js/questions.js"></script>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Questions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/questionanswer.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{static_url('fonts/font-awesome-4.2.0/css/font-awesome.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{static_url('css/menu_sideslide.css')}}"/>
+    <script src="{{static_url('js/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{static_url('js/questionanswer_classie.js')}}"></script>
+    <script src="{{static_url('js/questions.js')}}"></script>
 </head>
 
 <body>
-	<div class="container" style="display: block">
-		<div class="menu-wrap">
-			<nav class="menu">
-				<div class="icon-list">
-					<a href="#"><i class="fa fa-fw fa-star-o"></i><span>个人信息</span></a>
-					<a href="#"><i class="fa fa-fw fa-star-o"></i><span>开始测验</span></a>
-					<a href="#"><i class="fa fa-fw fa-star-o"></i><span>课后休闲</span></a>
-					<a href="#"><i class="fa fa-fw fa-star-o"></i><span>错题集</span></a>
-				</div>
-			</nav>
-			<button class="close-button" id="close-button">Close Menu</button>
-		</div>
-		<button class="menu-button" id="open-button">Open Menu</button>
-		<div class="content-wrap">
-			<div class="content">
-				<header class="questionanswer-header">
-					<h1>Children Learning <span>Learning Quickly</span></h1>
-					<div>
-						<nav class="questions" id="questions">
-							<div>
-								<a class="" href="#">1 x _ = 5</a><a>答案:<input type="text" name="answer"
-										style="width: 50px; background-color: inherit; border: 0"></a>
-							</div>
-							<div>
-								<a class="" href="#">1 x _ = 5</a><a>答案:<input type="text" name="answer"
-										style="width: 50px; background-color: inherit; border: 0"></a>
-							</div>
-							<div>
-								<a class="" href="#" id="alldone()">提交</a
-						</nav>
-					</div>
-				</header>
-			</div>
-		</div>
-		<!-- /content-wrap -->
-	</div>
-	<!-- /container -->
-	<script src="static/js/menuslide.js"></script>
+<div class="container" style="display: block">
+    <div class="menu-wrap">
+        <nav class="menu">
+            <div class="icon-list">
+                <a href="/person"><i class="fa fa-fw fa-star-o"></i><span>个人信息</span></a>
+                <a href="/questionsetting"><i class="fa fa-fw fa-star-o"></i><span>开始测验</span></a>
+                <a href="/relax"><i class="fa fa-fw fa-star-o"></i><span>课后休闲</span></a>
+                <a href="/review"><i class="fa fa-fw fa-star-o"></i><span>错题集</span></a>
+            </div>
+        </nav>
+        <button class="close-button" id="close-button">Close Menu</button>
+    </div>
+    <button class="menu-button" id="open-button">Open Menu</button>
+    <div class="content-wrap">
+        <div class="content">
+            <header class="questionanswer-header">
+                <h1>Children Learning <span>Learning Quickly</span></h1>
+                <div>
+					<nav class="questions" id="questions">
+<!--                        <div>-->
+<!--                            <a class="" href="#" onclick="alldone()">提交</a>-->
+<!--                        </div>-->
+                    </nav>
+                    <nav class="questions" id="submit_answers">
+                        <div>
+                            <a class="" href="#" onclick="alldone()">提交</a>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+    <!-- /content-wrap -->
+</div>
+<!-- /container -->
+<script src="{{static_url('js/menuslide.js')}}"></script>
 </body>
 
 </html>

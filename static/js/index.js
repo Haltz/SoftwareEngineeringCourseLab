@@ -36,3 +36,7 @@
 		navigate(linkEl);
 	});
 }
+
+function open_page(url) {
+	window.location.href=url;
+}
