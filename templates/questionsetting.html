@@ -11,10 +11,10 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-        // if ($.cookie('username') == null) {
-        //     alert("Login First!");
-        //     window.location.href = "/login";
-        // }
+        if ($.cookie('username') == null) {
+            alert("Login First!");
+            window.location.href = "/login";
+        }
 
         function request_questions() {
             var gradesel = document.getElementById('grade');
