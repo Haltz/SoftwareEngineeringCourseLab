@@ -47,29 +47,30 @@ class LoginHandler(web.RequestHandler):
             dict类型，key应包含'result':str，值应为"success"或者其他字符串和None
         '''
         task=self.get_argument('task')
-        if task=='login':
-            name=self.get_argument('name')
-            password=self.get_argument('password')
-            result=denglu(name,password)
-            if result==0:
-                ret = {'result': 'success'}
-                state = 1
-                now_user_name = 'name'
-            else:
-                ret = {'result': 'fail'}
-        else:
-            name = self.get_argument('name')
-            password = self.get_argument('password')
-            repeat_password = self.get_argument('repeat_password')
-            email = self.get_argument('email')
-            if password!=repeat_password:
-                ret = {"result": "fail"}
-            else:
-                result = zhuce(name, password, email)
-                if result==0:
-                    ret = {'result': 'success'}
-                else:
-                    ret = {'result': 'fail'}
+        ret = {'result': 'success'}
+        # if task=='login':
+        #     name=self.get_argument('name')
+        #     password=self.get_argument('password')
+        #     result=denglu(name,password)
+        #     if result==0:
+        #         ret = {'result': 'success'}
+        #         state = 1
+        #         now_user_name = 'name'
+        #     else:
+        #         ret = {'result': 'fail'}
+        # else:
+        #     name = self.get_argument('name')
+        #     password = self.get_argument('password')
+        #     repeat_password = self.get_argument('repeat_password')
+        #     email = self.get_argument('email')
+        #     if password!=repeat_password:
+        #         ret = {"result": "fail"}
+        #     else:
+        #         result = zhuce(name, password, email)
+        #         if result==0:
+        #             ret = {'result': 'success'}
+        #         else:
+        #             ret = {'result': 'fail'}
         self.write(ret)
 
 
@@ -115,7 +116,7 @@ class LoginHandler(web.RequestHandler):
 
 class QuestionanswerHandler(web.RequestHandler):
     def get(self):
-        self.render("questionanswer.html", sk='sk')
+        self.render("questionanswer.html", sk='sk',result='result')
 
     def post(self):
         '''
@@ -147,9 +148,9 @@ class QuestionanswerHandler(web.RequestHandler):
             # 生成题目并传到前端
             number=int(self.get_argument('number'))
             grade = self.get_argument('grade')
-            mode = self.get_argument('mode')
+            difficulty = self.get_argument('difficulty')
             for i in range(1, int(number)+ 1):
-                skak = issue.issues(grade, mode)
+                skak = issue.issues(grade, difficulty)
                 sk[str(i)] = skak['sk']
                 ak[str(i)] = skak['ak']
             self.write(sk)
@@ -173,8 +174,9 @@ class QuestionanswerHandler(web.RequestHandler):
                 rate = 'C'
             else:
                 rate = 'D'
+            result={'error_amount': error_amount, 'accuracy': accuracy, 'rate': rate}
             # 返回结果
-            self.write({'error_amount': error_amount, 'accuracy': accuracy, 'rate': rate})
+            self.write(result)
 
 
 class QuestionsettingHandler(web.RequestHandler):

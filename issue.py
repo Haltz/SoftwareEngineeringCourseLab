@@ -5,9 +5,9 @@ from random import *
 def issues(grade,mode):
     r = randint(0, 10)
     #1年级
-    if grade==1:
+    if grade=='%E4%B8%80%E5%B9%B4%E7%BA%A7':
         #简单模式
-        if mode=='easy':
+        if mode=='%E7%AE%80%E5%8D%95':
             if r<=7:
                 return add_sub_5 ()
             elif r<=9:
@@ -15,7 +15,7 @@ def issues(grade,mode):
             else :
                 return add_sub_20()
         #普通模式
-        elif mode=='normal':
+        elif mode=='%E4%B8%AD%E7%AD%89':
             if r<=1:
                 return add_sub_5 ()
             elif r<=5:
@@ -35,9 +35,9 @@ def issues(grade,mode):
             else:
                 return add_sub_100_3()
     #2年级
-    elif grade==2:
+    elif grade=='%E4%BA%8C%E5%B9%B4%E7%BA%A7':
         #简单模式
-        if mode=='easy':
+        if mode=='%E7%AE%80%E5%8D%95':
             if r<=3:
                 return add_sub_100()
             elif r<=7:
@@ -45,7 +45,7 @@ def issues(grade,mode):
             else:
                 return mul_biao()
         #普通模式
-        elif mode=='normal':
+        elif mode=='%E4%B8%AD%E7%AD%89':
             if r<=1:
                 return add_sub_100_3()
             elif r<=4:
@@ -63,11 +63,11 @@ def issues(grade,mode):
             elif r<=9:
                 return mix_100_3()
             else :
-                return add_sub_1w ()
+                return add_sub_1k ()
     #3年级
     else:
         # 简单模式
-        if mode == 'easy':
+        if mode == '%E7%AE%80%E5%8D%95':
             if r <= 2:
                 return mix_100_3()
             elif r <= 7:
@@ -75,7 +75,7 @@ def issues(grade,mode):
             else:
                 return mul_2_1 ()
         # 普通模式
-        elif mode == 'normal':
+        elif mode == '%E4%B8%AD%E7%AD%89':
             if r <= 1:
                 return add_sub_1k ()
             elif r <= 4:
