@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b9bf7d7-3fb7-4a2b-9150-42d6b5192e31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ceshi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chuangjianbiao.py" beforeDir="false" afterPath="$PROJECT_DIR$/chuangjianbiao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/denglu.py" beforeDir="false" afterPath="$PROJECT_DIR$/denglu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zhuce.py" beforeDir="false" afterPath="$PROJECT_DIR$/zhuce.py" afterDir="false" />
     </list>
@@ -88,7 +84,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ceshi">
+  <component name="RunManager" selected="Python.main">
     <configuration name="ceshi" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="html" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -198,10 +194,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.ceshi" />
         <item itemvalue="Python.zhuce" />
         <item itemvalue="Python.chuangjianbiao" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.gen_questions_lib" />
       </list>
     </recent_temporary>

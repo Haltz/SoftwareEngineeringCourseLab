@@ -2,7 +2,7 @@
 # 注册
 import pymysql
 
-def zhuce(user_name1, passw1,email1): 
+def zhuce(user_name1, passw1,email1):
     #返回0表示注册成功，非0表示不成功
 
     db = pymysql.connect(host="127.0.0.1", user="root", password="lxt123", db="awesome", port=3306, charset='utf8')

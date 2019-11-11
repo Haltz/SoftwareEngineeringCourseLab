@@ -18,11 +18,11 @@ class IndexHandler(web.RequestHandler):
         # 想客户端发送一个数据
         self.render("index.html")
 
-    def post(self):
-        exit = self.get_argument('exit')
-        if exit == 1:
-            state = 0
-            now_user_name = ''
+    #def post(self):
+    #    exit = self.get_argument('exit')
+    #    if exit == 1:
+    #        state = 0
+    #        now_user_name = ''
 
 
 # 登录和注册数据怎么区分？
@@ -47,9 +47,10 @@ class LoginHandler(web.RequestHandler):
             dict类型，key应包含'result':str，值应为"success"或者其他字符串和None
         '''
         task=self.get_argument('task')
-        info= json.loads(self.request.body)
         if task=='login':
-            result=denglu(info['name'],info['password'])
+            name=self.get_argument('name')
+            password=self.get_argument('password')
+            result=denglu(name,password)
             if result==0:
                 ret = {'result': 'success'}
                 state = 1
@@ -57,10 +58,14 @@ class LoginHandler(web.RequestHandler):
             else:
                 ret = {'result': 'fail'}
         else:
-            if info['password']!=info['repeat_password']:
+            name = self.get_argument('name')
+            password = self.get_argument('password')
+            repeat_password = self.get_argument('repeat_password')
+            email = self.get_argument('email')
+            if password!=repeat_password:
                 ret = {"result": "fail"}
             else:
-                result = zhuce(info['name'], info['password'], info['email'])
+                result = zhuce(name, password, email)
                 if result==0:
                     ret = {'result': 'success'}
                 else:
@@ -118,7 +123,7 @@ class QuestionanswerHandler(web.RequestHandler):
         参数有：
             task: str，表示请求的任务类型，值为 request_question 或者 request_result
             number: str，（仅仅用于request_question）表示请求的题目数量
-            grade: str，（仅仅用于request_question）值为 "一年级" 或者 "二年级" 或者 "三年级" 或者 "四年级" 或者 "五年级" 或者 "六年级"
+            grade: str，（仅仅用于request_question）值为 "一年级" 或者 "二年级" 或者 "三年级"
             difficulty: str，（仅仅用于request_question）值为 "简单" 或者 "中等" 或者 "困难"
             mode: str 值为 （仅仅用于request_question）"错题重做" 或者 "普通测试"
             username: str，表示用户名
@@ -135,28 +140,31 @@ class QuestionanswerHandler(web.RequestHandler):
         # if (task == "test"):
         #     self.write({1: '1 X 2 = __'})
         #     return
-        chose = json.loads(self.request.body)
         sk = {}
         ak = {}
+        number=1
         if (task == "request_question"):
             # 生成题目并传到前端
-            for i in range(1, chose['number'] + 1):
-                skak = issue.issues(chose['grade'], chose['mode'])
-                sk[i] = skak['sk']
-                ak[i] = skak['ak']
+            number=int(self.get_argument('number'))
+            grade = self.get_argument('grade')
+            mode = self.get_argument('mode')
+            for i in range(1, int(number)+ 1):
+                skak = issue.issues(grade, mode)
+                sk[str(i)] = skak['sk']
+                ak[str(i)] = skak['ak']
             self.write(sk)
+            t0 = timeit.default_timer()
 
         if (task == "request_result"):
             t0 = timeit.default_timer()
-            # 接受答案
-            student_ak = json.loads(self.request.body)
             # 计时结束
             # 批改答案
             error_amount = 0
-            for i in range(1, chose['number'] + 1):
-                if student_ak[i] != ak[i]:
+            for i in range(1, int(number) + 1):
+                student_ak=int(self.get_argument('i'))
+                if student_ak!= ak[i]:
                     error_amount += 1
-            accuracy = 1 - float(error_amount) / float(chose['number'])
+            accuracy = 1 - float(error_amount) / float(int(number))
             if accuracy >= 0.9:
                 rate = 'A'
             elif accuracy >= 0.8:
