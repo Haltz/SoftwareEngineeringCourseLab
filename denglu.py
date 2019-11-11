@@ -1,3 +1,4 @@
+#coding: utf-8
 #user_name:用户名 passw:密码
 #登陆
 import pymysql

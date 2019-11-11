@@ -11,6 +11,11 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
+        if ($.cookie('username') == null) {
+            alert("Login First!");
+            window.location.href = "/login";
+        }
+
         function request_questions() {
             var gradesel = document.getElementById('grade');
             var gradeindex = gradesel.selectedIndex;
@@ -21,7 +26,10 @@
             var modesel = document.getElementById('mode');
             var modeindex = modesel.selectedIndex;
             var mode = modesel.options[modeindex].text;
-            url = '/questionanswer?grade=' + grade + "&difficulty=" + dif + "&mode=" + mode;
+            var numbersel = document.getElementById('number');
+            var numberindex = numbersel.selectedIndex;
+            var number = numbersel.options[numberindex].text;
+            url = '/questionanswer?grade=' + grade + "&difficulty=" + dif + "&mode=" + mode + "&number=" + number;
             window.location.href = url;
         }
     </script>
@@ -29,46 +37,64 @@
 
 <body>
 
-    <div class="container" style="width: 70%">
-        <h1 style="width: 100%; margin: 0 auto; text-align: center">选择你的题目设置</h1>
-        <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择你的年级</h5>
-        <form>
-            <div class="form-group">
-                <select class="form-control" id="grade">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-                <br>
-            </div>
-        </form>
-        <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择你的难度</h5>
-        <form>
-            <div class="form-group">
-                <select class="form-control" id="difficulty">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-                <br>
-            </div>
-        </form>
-        <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择题目类型</h5>
-        <form>
-            <div class="form-group">
-                <select class="form-control" id="mode">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
-                <br>
-            </div>
-        </form>
-        <input type="button" value="提交" onclick="request_questions()" style="width:100%; margin: 0 auto;">
-    </div>
+<div class="container" style="width: 70%">
+    <h1 style="width: 100%; margin: 0 auto; text-align: center">选择你的题目设置</h1>
+    <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择你的年级</h5>
+    <form>
+        <div class="form-group">
+            <select class="form-control" id="grade">
+                <option>一年级</option>
+                <option>二年级</option>
+                <option>三年级</option>
+                <option>四年级</option>
+                <option>五年级</option>
+                <option>六年级</option>
+            </select>
+            <br>
+        </div>
+    </form>
+    <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择你的难度</h5>
+    <form>
+        <div class="form-group">
+            <select class="form-control" id="difficulty">
+                <option>简单</option>
+                <option>中等</option>
+                <option>困难</option>
+            </select>
+            <br>
+        </div>
+    </form>
+    <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择题目类型</h5>
+    <form>
+        <div class="form-group">
+            <select class="form-control" id="mode">
+                <option>错题重做</option>
+                <option>普通测试</option>
+            </select>
+            <br>
+        </div>
+    </form>
+    <h5 style="width: 100%; margin: 0 auto; text-align: center; padding: 15px">选择题目数量</h5>
+    <form>
+        <div class="form-group">
+            <select class="form-control" id="number">
+                <option>5</option>
+                <option>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>40</option>
+                <option>50</option>
+                <option>60</option>
+                <option>70</option>
+                <option>80</option>
+                <option>90</option>
+                <option>100</option>
+            </select>
+            <br>
+        </div>
+    </form>
+    <input type="button" value="提交" onclick="request_questions()" style="width:100%; margin: 0 auto;">
+</div>
 
 </body>
 
