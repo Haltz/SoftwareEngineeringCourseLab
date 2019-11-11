@@ -9,8 +9,9 @@ cur = con.cursor()
 cur.execute('use awesome;')
 # 建表
 cur.execute('''
- CREATE TABLE INFOM(id int unsigned primary key auto_increment not null,
- user_name CHAR(20) NOT NULL,passw CHAR(20))
+ CREATE TABLE INFOM2(id int unsigned primary key auto_increment not null,
+ user_name CHAR(20) NOT NULL,passw CHAR(20),
+ email CHAR(40))
  ''')
 
 

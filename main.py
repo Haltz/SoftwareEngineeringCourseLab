@@ -19,7 +19,7 @@ class IndexHandler(web.RequestHandler):
         self.render("index.html")
 
     def post(self):
-        exit = self.get_argument(exit)
+        exit = self.get_argument('exit')
         if exit == 1:
             state = 0
             now_user_name = ''
@@ -47,10 +47,9 @@ class LoginHandler(web.RequestHandler):
             dict类型，key应包含'result':str，值应为"success"或者其他字符串和None
         '''
         task=self.get_argument('task')
+        info= json.loads(self.request.body)
         if task=='login':
-            name=self.get_argument('name')
-            password=self.get_argument('password')
-            result=denglu(name,password)
+            result=denglu(info['name'],info['password'])
             if result==0:
                 ret = {'result': 'success'}
                 state = 1
@@ -58,14 +57,10 @@ class LoginHandler(web.RequestHandler):
             else:
                 ret = {'result': 'fail'}
         else:
-            name = self.get_argument('name')
-            password = self.get_argument('password')
-            email=self.get_argument('email')
-            repeat_password=self.get_argument('repeat_password')
-            if password!=repeat_password:
+            if info['password']!=info['repeat_password']:
                 ret = {"result": "fail"}
             else:
-                result = zhuce(name, password, email)
+                result = zhuce(info['name'], info['password'], info['email'])
                 if result==0:
                     ret = {'result': 'success'}
                 else:

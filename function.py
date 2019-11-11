@@ -44,7 +44,7 @@ def add_sub_10():
         elif pos == 1:
             return {'sk': str(mins) + " + __ = " + str(maxs), 'ak': str(maxs - mins)}
         else:
-            return {'sk': str(mins) + " + " + str(maxs - mins) + " = __", 'ak': str(max)}
+            return {'sk': str(mins) + " + " + str(maxs - mins) + " = __", 'ak': str(maxs)}
     else:
         if pos == 0:
             return {'sk': "__ - " + str(maxs - mins) + " = " + str(mins), 'ak': str(maxs)}
@@ -69,7 +69,7 @@ def add_sub_20() :
         elif pos == 1:
             return {'sk': str(mins) + " + __ = " + str(maxs), 'ak': str(maxs - mins)}
         else:
-            return {'sk': str(mins) + " + " + str(maxs - mins) + " = __", 'ak': str(max)}
+            return {'sk': str(mins) + " + " + str(maxs - mins) + " = __", 'ak': str(maxs)}
     else:
         if pos == 0:
             return {'sk': "__ - " + str(maxs - mins) + " = " + str(mins), 'ak': str(maxs)}
@@ -94,7 +94,7 @@ def add_sub_100() :
         elif pos == 1:
             return {'sk': str(mins) + " + __ = " + str(maxs), 'ak': str(maxs - mins)}
         else:
-            return {'sk': str(mins) + " + " + str(maxs - mins) + " = __", 'ak': str(max)}
+            return {'sk': str(mins) + " + " + str(maxs - mins) + " = __", 'ak': str(maxs)}
     else:
         if pos == 0:
             return {'sk': "__ - " + str(maxs - mins) + " = " + str(mins), 'ak': str(maxs)}
@@ -134,13 +134,13 @@ def add_sub_100_3() :
         else:
             while(first<third):
                 third = randint(0, 100)
-                maxs=max(first,second)
-                mins=min(first,second)
+            maxs=max(first,second)
+            mins=min(first,second)
             if pos==0:
-                return{'sk':'__ + '+str(maxs-mins)+' - '+str(third)+' = '+str(maxs-third),'ak':str(mins)}
+                return {'sk': '__ + '+str(maxs - mins)+' - '+str(third)+' = '+str(maxs - third), 'ak': str(mins)}
             elif pos==1:
                 return {'sk': str(mins)+' + __ - ' + str(third) + ' = ' + str(maxs - third),
-                        'ak': str(maxs-mins)}
+                        'ak': str(maxs - mins)}
             elif pos==2:
                 return {'sk': str(mins)+' + ' + str(maxs - mins) + ' - __ = '  + str(maxs - third),
                         'ak': str(third)}
@@ -212,13 +212,13 @@ def div_remainder():
     remainder = randint(0,first-1)
     pos=randint(0,3)
     if pos==0:
-        return {'sk':'__ ÷ '+str(first)+' = '+str(second)+' 余 '+str(remainder),'ak':str(first*second)}
+        return {'sk':'__ ÷ '+str(first)+' = '+str(second)+' 余 '+str(remainder),'ak':str(first*second+remainder)}
     elif pos==1:
-        return{'sk':str(first*second)+' ÷ __='+str(second)+' 余 '+str(remainder),'ak':str(first)}
+        return{'sk':str(first*second+remainder)+' ÷ __ ='+str(second)+' 余 '+str(remainder),'ak':str(first)}
     elif pos==2:
-        return{'sk':str(first*second)+' ÷ '+str(first)+' = __ 余 '+str(remainder),'ak':str(second)}
+        return{'sk':str(first*second+remainder)+' ÷ '+str(first)+' = __ 余 '+str(remainder),'ak':str(second)}
     else:
-        return{'sk':str(first*second)+' ÷ '+str(first)+' = '+str(second)+' 余 __','ak':str(remainder)}
+        return{'sk':str(first*second+remainder)+' ÷ '+str(first)+' = '+str(second)+' 余 __','ak':str(remainder)}
 
 #100以内加减乘除混合（3位数）
 def mix_100_3():
@@ -326,17 +326,17 @@ def mix_100_3():
             mins=min(first,second,third)
             sums=sum([first,second,third])
             if pos == 0:
-                return {'sk': '__ - ' + str(2*maxs-sums+mins) + ' - ' + str(sums-maxs-2*mins) + ' = ' + str(mins + third),
+                return {'sk': '__ - ' + str(2*maxs-sums+mins) + ' - ' + str(sums-maxs-2*mins) + ' = ' + str(mins),
                         'ak': str(maxs)}
             elif pos == 1:
-                return {'sk': str(maxs) + ' - __ - ' + str(third) + ' = ' + str(mins + third),
+                return {'sk': str(maxs) + ' - __ - ' + str(sums-maxs-2*mins) + ' = ' + str(mins),
                         'ak': str(2*maxs-sums+mins)}
             elif pos == 2:
-                return {'sk': str(maxs) + ' - ' + str(2*maxs-sums+mins) + ' - __ = ' + str(mins + third),
+                return {'sk': str(maxs) + ' - ' + str(2*maxs-sums+mins) + ' - __ = ' + str(mins),
                         'ak': str(sums-maxs-2*mins)}
             else:
                 return {'sk': str(maxs) + ' - ' + str(2*maxs-sums+mins) + ' - ' + str(sums-maxs-2*mins) + ' = __',
-                        'ak': str(mins + third)}
+                        'ak': str(mins)}
         elif op2==2:
             second=randint(1,9)
             third=randint(1,9)
