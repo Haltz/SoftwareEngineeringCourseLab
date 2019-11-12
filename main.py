@@ -162,7 +162,7 @@ class QuestionanswerHandler(web.RequestHandler):
             # 批改答案
             error_amount = 0
             for i in range(1, int(number) + 1):
-                student_ak=int(self.get_argument('i'))
+                student_ak=int(self.get_argument(repr(i)))
                 if student_ak!= ak[i]:
                     error_amount += 1
             accuracy = 1 - float(error_amount) / float(int(number))

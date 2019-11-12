@@ -42,6 +42,10 @@
         <h2 class="content__title" onclick="window.location.href='/index'">Home</h2>
         <p class="content__text">The home page.</p>
     </div>
+    <div id="content-7" class="content content--switch">
+        <h2 class="content__title" onclick="window.location.href='/login'">Home</h2>
+        <p class="content__text">The home page.</p>
+    </div>
     <nav class="grim">
         <div class="grim__item">
             <div class="grim__item-bg grim__item-bg--1"></div>
@@ -54,16 +58,21 @@
         </div>
         <div class="grim__item">
             <div class="grim__item-bg grim__item-bg--4"></div>
+            <a class="grim__link grim__item-content">
+                <div class="grim__item-inner">
+                <button class="grim__item-title menu-trigger menu-trigger--close">- close</button>
+                </div>
+            </a>
         </div>
         <div class="grim__item">
             <div class="grim__item-bg grim__item-bg--5"></div>
-            <div class="grim__item-content">
+            <a href="/login" class="grim__link grim__item-content" onclick="open('/login','_self')">
                 <div class="grim__item-inner">
-                    <button class="menu-trigger menu-trigger--close">- close</button>
+                    <h3 class="grim__item-title">Login</h3>
+                    <span class="grim__item-desc">Login First!</span>
                 </div>
-            </div>
+            </a>
         </div>
-
         <div class="grim__item">
             <div class="grim__item-bg grim__item-bg--6"></div>
             <a href="/review" class="grim__link grim__item-content" onclick="open('/review','_self')">
@@ -85,7 +94,7 @@
         </div>
         <div class="grim__item">
             <div class="grim__item-bg grim__item-bg--8"></div>
-            <a href="/questionanswer" class="grim__link grim__item-content"  onclick="open('/questionanswer','_self')">
+            <a href="/questionanswer" class="grim__link grim__item-content" onclick="open('/questionanswer','_self')">
                 <div class="grim__item-inner">
                     <h3 class="grim__item-title">Quiz</h3>
                     <span class="grim__item-desc">Take a quiz!</span>
@@ -110,6 +119,7 @@
                 </div>
             </a>
         </div>
+
     </nav>
 </main>
 <script src="{{static_url('js/index.js')}}"></script>

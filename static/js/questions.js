@@ -16,7 +16,6 @@ if (url.indexOf('?') != -1) {
         success: function (response) {
 
             for (var item in response) {
-                alert(response[item]);
                 document.getElementById("questions").innerHTML = '<div><a class="" href="#">' + response[item] + '</a><a>答案:<input type="text" name="answer" style="width: 50px; background-color: inherit; border: 0"></a></div>' + document.getElementById("questions").innerHTML;
             }
         }
@@ -30,9 +29,10 @@ function alldone() {
     var ret = document.getElementsByTagName("input");
     var answers = new Object();
     for (var i = 0; i < ret.length; i++) {
-        answers[i] = ret[i].value;
-        alert(ret[i].value);
+        var s = String(i);
+        answers[s] = ret[i].value;
     }
+
     answers.task = "request_result";
     $.ajax({
         type: "POST",
@@ -45,6 +45,7 @@ function alldone() {
                 var info = "";
                 info += item;
                 info += " = " + response[item] + "\n";
+                alert(info);
                 document.getElementById("questions").innerHTML += '<div>\n' +
                     '\t\t\t\t\t\t\t\t<a class="" href="#">' + info + '</a>\n' +
                     '\t\t\t\t\t\t\t</div>'
