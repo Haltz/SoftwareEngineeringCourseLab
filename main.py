@@ -18,7 +18,7 @@ class IndexHandler(web.RequestHandler):
         # 想客户端发送一个数据
         self.render("index.html")
 
-    #def post(self):
+    # def post(self):
     #    exit = self.get_argument('exit')
     #    if exit == 1:
     #        state = 0
@@ -27,8 +27,6 @@ class IndexHandler(web.RequestHandler):
 
 # 登录和注册数据怎么区分？
 class LoginHandler(web.RequestHandler):
-
-
 
     def get(self, *args, **kwargs):
         # 想客户端发送一个数据
@@ -46,7 +44,7 @@ class LoginHandler(web.RequestHandler):
         应该返回：
             dict类型，key应包含'result':str，值应为"success"或者其他字符串和None
         '''
-        task=self.get_argument('task')
+        task = self.get_argument('task')
         ret = {'result': 'success'}
         # if task=='login':
         #     name=self.get_argument('name')
@@ -116,7 +114,7 @@ class LoginHandler(web.RequestHandler):
 
 class QuestionanswerHandler(web.RequestHandler):
     def get(self):
-        self.render("questionanswer.html", sk='sk',result='result')
+        self.render("questionanswer.html", sk='sk', result='result')
 
     def post(self):
         '''
@@ -143,16 +141,17 @@ class QuestionanswerHandler(web.RequestHandler):
         #     return
         sk = {}
         ak = {}
-        number=1
+        number = 1
         if (task == "request_question"):
             # 生成题目并传到前端
-            number=int(self.get_argument('number'))
+            number = int(self.get_argument('number'))
             grade = self.get_argument('grade')
             difficulty = self.get_argument('difficulty')
-            for i in range(1, int(number)+ 1):
+            for i in range(1, int(number) + 1):
                 skak = issue.issues(grade, difficulty)
                 sk[str(i)] = skak['sk']
                 ak[str(i)] = skak['ak']
+            print(ak)
             self.write(sk)
             t0 = timeit.default_timer()
 
@@ -162,8 +161,9 @@ class QuestionanswerHandler(web.RequestHandler):
             # 批改答案
             error_amount = 0
             for i in range(1, int(number) + 1):
-                student_ak=int(self.get_argument(repr(i)))
-                if student_ak!= ak[i]:
+
+                student_ak = int(self.get_argument(repr(i)))
+                if student_ak != ak[repr(i)]:
                     error_amount += 1
             accuracy = 1 - float(error_amount) / float(int(number))
             if accuracy >= 0.9:
@@ -174,7 +174,7 @@ class QuestionanswerHandler(web.RequestHandler):
                 rate = 'C'
             else:
                 rate = 'D'
-            result={'error_amount': error_amount, 'accuracy': accuracy, 'rate': rate}
+            result = {'error_amount': error_amount, 'accuracy': accuracy, 'rate': rate}
             # 返回结果
             self.write(result)
 
@@ -268,7 +268,26 @@ class PersonHandler(web.RequestHandler):
                     test.test_level: str 表示测试的评级
                 }
         '''
-        self.write({"username": "熊猫王"})
+        if self.get_argument('task')=='personinfo':
+            self.write({
+                "identification": "str 表示用户ID",
+                "username": "str 表示用户名",
+                "email": "str 表示邮箱",
+            })
+        else:
+            self.write({
+                "1": {
+                    "user_name": "1",
+                    "test_id": "2",
+                    "test_limit_time": "100s",
+                    "test_difficulty": "hard",
+                    "test_usetime": "10s",
+                    "test_number": "100",
+                    "test_wrong_number": "10",
+                    "test_accuracy": "90%",
+                    "test_level": "A",
+                }
+            })
 
 
 settings = {
@@ -286,22 +305,22 @@ application = web.Application([
 )
 
 if __name__ == '__main__':
-        #
-        ## 创建表
-        #con = pymysql.connect("127.0.0.1", "root", "lxt123", charset='utf8')
+    #
+    ## 创建表
+    # con = pymysql.connect("127.0.0.1", "root", "lxt123", charset='utf8')
 
-        #cur = con.cursor()
-        ## 开始建库
-        ## cur.execute("create database awesome character set utf8;")
-        ## 使用库
-        #cur.execute('use awesome;')
-        ## 建表
-        #cur.execute('''
-        #     CREATE TABLE INFOM(id int unsigned primary key auto_increment not null,
-        #     user_name CHAR(20) NOT NULL,passw CHAR(20))
-        #    ''')
-        #cur.close()
-        #con.close()
+    # cur = con.cursor()
+    ## 开始建库
+    ## cur.execute("create database awesome character set utf8;")
+    ## 使用库
+    # cur.execute('use awesome;')
+    ## 建表
+    # cur.execute('''
+    #     CREATE TABLE INFOM(id int unsigned primary key auto_increment not null,
+    #     user_name CHAR(20) NOT NULL,passw CHAR(20))
+    #    ''')
+    # cur.close()
+    # con.close()
     http_server = httpserver.HTTPServer(application)
     http_server.listen(8080)
     ioloop.IOLoop.current().start()

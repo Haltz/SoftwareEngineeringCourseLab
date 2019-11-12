@@ -4,6 +4,7 @@ $(document).ready(function () {
         window.location.href = "/login";
     }
     var username = $.cookie("username");
+    // alert(username);
     $.ajax({
         type: "POST",
         url: "/person",
@@ -13,10 +14,7 @@ $(document).ready(function () {
         },
         dataType: "json",
         success: function (response) {
-            for (var i in response) {
-                alert(response.i);
-            }
-            document.getElementById('identification').innerHTML = response.id;
+            document.getElementById('identification').innerHTML = response.identification;
             document.getElementById('username').innerHTML = response.username;
             document.getElementById('email').innerHTML = response.email;
         }
@@ -33,7 +31,7 @@ $(document).ready(function () {
         success: function (response) {
             var testsinfo = "";
             for (var testid in response) {
-                test = response.testid;
+                test = response[testid];
                 testsinfo += "<tr>\n" +
                     "\t\t\t\t\t\t\t<th>" + test.test_id + "</th>\n" +
                     "\t\t\t\t\t\t\t<td>" + test.test_limit_time + "</td>\n" +
@@ -45,6 +43,7 @@ $(document).ready(function () {
                     "\t\t\t\t\t\t\t<td>" + test.test_level + "</td>\n" +
                     "\t\t\t\t\t\t</tr>"
             }
+            document.getElementById('testsinfo').innerHTML=testsinfo;
         }
     });
 });

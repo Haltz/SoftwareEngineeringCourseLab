@@ -30,7 +30,10 @@ function alldone() {
     var answers = new Object();
     for (var i = 0; i < ret.length; i++) {
         var s = String(i);
-        answers[s] = ret[i].value;
+        if(ret[i].value == ""){
+            answers[s]="999999999";
+        }
+        else {answers[s] = ret[i].value;}
     }
 
     answers.task = "request_result";
