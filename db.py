@@ -14,10 +14,11 @@ def query_data(sql):
 # return：list[dict]
     conn = get_conn()
     try:
-        cursor = conn.curcsor(pymysql.cursors.DictCursor)
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
         cursor.execute(sql)
         return cursor.fetchall()
     finally:
+        cursor.close()
         conn.close()
 
 def insert_or_update_data(sql):
@@ -25,8 +26,9 @@ def insert_or_update_data(sql):
     #return:不返回内容
     conn = get_conn()
     try:
-        cursor = conn.curcsor()
+        cursor = conn.cursor()
         cursor.execute(sql)
         conn.commit()
     finally:
+        cursor.close()
         conn.close()

@@ -257,6 +257,7 @@ class PersonHandler(web.RequestHandler):
             dict类型，key应当为 测试的ID的字符串，值应当为 一个dict类型
                 值的dict应该如下
                 {
+                    user_name:str 用户名
                     test_id: str 表示测试的ID
                     test_limit_time: str 表示测试限制的时间
                     test_difficulty: str 表示测试的难度
