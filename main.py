@@ -1,13 +1,15 @@
 from tornado import web, ioloop, httpserver
 import json, urllib3
+import random
 import time, timeit
-import issue
 import os
-from denglu import *
-from zhuce import *
+from src.account import account
+from src.account import info as infopy
+from src.quiz import make
 
 state = 0  # 记录登录状态
 now_user_name = ''  # 现在的用户名
+tmp = 0
 
 
 # 定义视图处理函数
@@ -18,11 +20,8 @@ class IndexHandler(web.RequestHandler):
         # 想客户端发送一个数据
         self.render("index.html")
 
-    # def post(self):
-    #    exit = self.get_argument('exit')
-    #    if exit == 1:
-    #        state = 0
-    #        now_user_name = ''
+    def post(self):
+        pass
 
 
 # 登录和注册数据怎么区分？
@@ -40,76 +39,35 @@ class LoginHandler(web.RequestHandler):
             name: str，表示登录或者注册的用户名
             password: str，表示登录或者注册的密码
             email: str，(此项仅仅用于注册)，表示注册的邮箱
-            repeat_password: str，(此项仅仅用于注册)，表示注册的确认密码
+            repeat_passwd: str，(此项仅仅用于注册)，表示注册的确认密码
         应该返回：
             dict类型，key应包含'result':str，值应为"success"或者其他字符串和None
         '''
         task = self.get_argument('task')
-        ret = {'result': 'success'}
-        # if task=='login':
-        #     name=self.get_argument('name')
-        #     password=self.get_argument('password')
-        #     result=denglu(name,password)
-        #     if result==0:
-        #         ret = {'result': 'success'}
-        #         state = 1
-        #         now_user_name = 'name'
-        #     else:
-        #         ret = {'result': 'fail'}
-        # else:
-        #     name = self.get_argument('name')
-        #     password = self.get_argument('password')
-        #     repeat_password = self.get_argument('repeat_password')
-        #     email = self.get_argument('email')
-        #     if password!=repeat_password:
-        #         ret = {"result": "fail"}
-        #     else:
-        #         result = zhuce(name, password, email)
-        #         if result==0:
-        #             ret = {'result': 'success'}
-        #         else:
-        #             ret = {'result': 'fail'}
-        self.write(ret)
-
-
-# # 做题页面
-# class QuestionanswerHandler(web.RequestHandler):
-#     def get(self, *args, **kwargs):
-#         self.render("questionanswer.html", sk='sk')
-#         # 传用户选择的设置
-#
-#     def post(self):
-#         chose = json.loads(self.request.body)
-#         # 生成题目并传到前端
-#         sk = {}
-#         ak = {}
-#         for i in range(1, chose['number'] + 1):
-#             skak = issue.issues(chose['grade'], chose['mode'])
-#             sk[i] = skak['sk']
-#             ak[i] = skak['ak']
-#         self.write(sk)
-#         # 开始计时
-#         t0 = timeit.default_timer()
-#         # 接受答案
-#         student_ak = json.loads(self.request.body)
-#         # 计时结束
-#         # 批改答案
-#         error_amount = 0
-#         for i in range(1, chose['number'] + 1):
-#             if student_ak[i] != ak[i]:
-#                 error_amount += 1
-#         accuracy = 1 - float(error_amount) / float(chose['number'])
-#         if accuracy >= 0.9:
-#             rate = 'A'
-#         elif accuracy >= 0.8:
-#             rate = 'B'
-#         elif accuracy >= 0.6:
-#             rate = 'C'
-#         else:
-#             rate = 'D'
-#         # 返回结果
-#         self.write({'error_amount': error_amount, 'accuracy': accuracy, 'rate': rate})
-#     # 数据记录到数据库中
+        if (task == "login"):
+            name = self.get_argument("name")
+            passwd = self.get_argument("password")
+            print(name, passwd, task)
+            if (account.login(name, passwd)):
+                self.write({"result": "success"})
+                return
+            else:
+                self.write({"result": "failure"})
+                return
+        if (task == "signup"):
+            name = self.get_argument("name")
+            passwd = self.get_argument("password")
+            email = self.get_argument("email")
+            rep_passwd = self.get_argument("repeat_passwd")
+            if (rep_passwd != passwd):
+                self.write({"result": "failure"})
+                return
+            if (account.signup(name, email, passwd)):
+                self.write({"result": "success"})
+                return
+            else:
+                self.write({"result": "failure"})
+                return
 
 
 class QuestionanswerHandler(web.RequestHandler):
@@ -135,46 +93,69 @@ class QuestionanswerHandler(web.RequestHandler):
                 #todo 可以有多项指标，都可以显示，有后端指定
         '''
         task = self.get_argument('task')
-        # for test
-        # if (task == "test"):
-        #     self.write({1: '1 X 2 = __'})
-        #     return
-        sk = {}
-        ak = {}
-        number = 1
         if (task == "request_question"):
-            # 生成题目并传到前端
-            number = int(self.get_argument('number'))
-            grade = self.get_argument('grade')
-            difficulty = self.get_argument('difficulty')
-            for i in range(1, int(number) + 1):
-                skak = issue.issues(grade, difficulty)
-                sk[str(i)] = skak['sk']
-                ak[str(i)] = skak['ak']
-            print(ak)
-            self.write(sk)
-            t0 = timeit.default_timer()
+            username = self.get_argument("username")
+            mode = self.get_argument("mode")
+            difficulty = self.get_argument("difficulty")
+            grade = self.get_argument("grade")
+            number = self.get_argument("number")
+            if (mode == "normal" or mode == "review"):
+                questions = make.makesuitques(grade, eval(number), difficulty)
+                dinfo = {str(index): {"ac": questions[index]["cutnum"], "body": questions[index]["show_string"]}
+                         for index in questions.keys()}
+                dinfo["number"] = number
+                dinfo["grade"] = str(grade)
+                dinfo["type"] = str(mode)
+                dinfo["difficulty"] = str(difficulty)
+                tests = infopy.get_tests(username)
+                dinfo["id"] = tests["number"] + 1
+                json.dump(
+                    dinfo,
+                    open("data/account/{}/tmp.json".format(username), 'w', encoding='utf-8'))
+                self.write({str(index): questions[index]["show_string"] for index in questions.keys()})
 
         if (task == "request_result"):
-            t0 = timeit.default_timer()
-            # 计时结束
-            # 批改答案
-            error_amount = 0
-            for i in range(1, int(number) + 1):
-
-                student_ak = int(self.get_argument(repr(i)))
-                if student_ak != ak[repr(i)]:
-                    error_amount += 1
-            accuracy = 1 - float(error_amount) / float(int(number))
-            if accuracy >= 0.9:
-                rate = 'A'
-            elif accuracy >= 0.8:
-                rate = 'B'
-            elif accuracy >= 0.6:
-                rate = 'C'
+            errors = 0
+            username = self.get_argument("username")
+            info = json.load(open("data/account/{}/tmp.json".format(username), 'r', encoding='utf-8'))
+            number = eval(info["number"])
+            save = {}
+            for i in range(number):
+                ans = self.get_argument(str(i))
+                tr = info[str(i)]["ac"]
+                if (str(ans) != str(tr)):
+                    errors += 1
+                    save[info[str(i)]["body"]] = {
+                        "id": str(i),
+                        "wa": str(ans),
+                        "ac": str(tr),
+                        "grade": info["grade"],
+                        "type": info["type"],
+                        "difficulty": info["difficulty"]
+                    }
+            acc = int((1 - errors / number) * 100 + 0.5)
+            rate = ""
+            if (acc >= 90):
+                rate = "A"
+            elif (acc >= 80):
+                rate = "B"
+            elif (acc >= 60):
+                rate = "C"
             else:
-                rate = 'D'
-            result = {'error_amount': error_amount, 'accuracy': accuracy, 'rate': rate}
+                rate = "D"
+
+            result = {'errors': errors, 'accuracy': str(acc) + "%", 'level': rate}
+            infopy.save_wrongs(username, save)
+            test = {
+                "grade": info["grade"],
+                "type": info["type"],
+                "difficulty": info["difficulty"],
+                "number": info["number"],
+                "wrongs": errors,
+                "accuracy": acc,
+                "level": rate
+            }
+            infopy.save_tests(username, test)
             # 返回结果
             self.write(result)
 
@@ -228,7 +209,21 @@ class ReviewHandler(web.RequestHandler):
                     right_answer: str 表示答正确的答案
                 }
         '''
-        pass
+        username = self.get_argument("username")
+        wrongs = infopy.get_wrongs(username)
+        ret = {}
+        for key in wrongs.keys():
+            if (key == "number"):
+                continue
+            ret[key] = {
+                "test_type": wrongs[key]["type"],
+                "test_grade": wrongs[key]["grade"],
+                "test_difficulty": wrongs[key]["difficulty"],
+                "test_body": key,
+                "wrong_answer": wrongs[key]["wa"],
+                "right_answer": wrongs[key]["ac"]
+            }
+        self.write(ret)
 
 
 # 个人主页   账户（ID，昵称，年级未显示？，做题记录）
@@ -249,7 +244,6 @@ class PersonHandler(web.RequestHandler):
             dict类型，key 应当为 字符串类型， 值应当为 字符串类型
                 值的dict应该如下
                 {
-                    identification: str 表示用户ID
                     username: str 表示用户名
                     email: str 表示邮箱
                 }
@@ -268,26 +262,33 @@ class PersonHandler(web.RequestHandler):
                     test.test_level: str 表示测试的评级
                 }
         '''
-        if self.get_argument('task')=='personinfo':
+        if self.get_argument('task') == 'personinfo':
+            username = self.get_argument("username")
+            user = infopy.get_account(username)
+            if (user["email"] == ""):
+                user['email'] = "You don't write it when sign up."
             self.write({
-                "identification": "str 表示用户ID",
-                "username": "str 表示用户名",
-                "email": "str 表示邮箱",
+                "identification": user["id"],
+                "username": user["username"],
+                "email": user["email"]
             })
-        else:
-            self.write({
-                "1": {
-                    "user_name": "1",
-                    "test_id": "2",
-                    "test_limit_time": "100s",
-                    "test_difficulty": "hard",
-                    "test_usetime": "10s",
-                    "test_number": "100",
-                    "test_wrong_number": "10",
-                    "test_accuracy": "90%",
-                    "test_level": "A",
+        elif self.get_argument('task') == 'testsinfo':
+            username = self.get_argument("username")
+            tests = infopy.get_tests(username)
+            ret = {}
+            for key in tests.keys():
+                if (key == "number"):
+                    continue
+                ret[key] = {
+                    "username": username,
+                    "test_id": key,
+                    "test_difficulty": tests[key]["difficulty"],
+                    "test_number": tests[key]["number"],
+                    "test_wrong_number": tests[key]["wrongs"],
+                    "test_accuracy": tests[key]["accuracy"],
+                    "test_level": tests[key]["level"],
                 }
-            })
+            self.write(ret)
 
 
 settings = {

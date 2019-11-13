@@ -34,9 +34,9 @@ $(document).ready(function () {
                 test = response[testid];
                 testsinfo += "<tr>\n" +
                     "\t\t\t\t\t\t\t<th>" + test.test_id + "</th>\n" +
-                    "\t\t\t\t\t\t\t<td>" + test.test_limit_time + "</td>\n" +
+                    // "\t\t\t\t\t\t\t<td>" + test.test_limit_time + "</td>\n" +
                     "\t\t\t\t\t\t\t<td>" + test.test_difficulty + "</td>\n" +
-                    "\t\t\t\t\t\t\t<td>" + test.test_usetime + "</td>\n" +
+                    // "\t\t\t\t\t\t\t<td>" + test.test_usetime + "</td>\n" +
                     "\t\t\t\t\t\t\t<td>" + test.test_number + "</td>\n" +
                     "\t\t\t\t\t\t\t<td>" + test.test_wrong_number + "</td>\n" +
                     "\t\t\t\t\t\t\t<td>" + test.test_accuracy + "</td>\n" +

@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="{{static_url('js/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{static_url('js/jquery.cookie.js')}}"></script>
+    <script src="{{ static_url('js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ static_url('js/jquery.cookie.js') }}"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
@@ -43,9 +43,9 @@
     <form>
         <div class="form-group">
             <select class="form-control" id="grade">
-                <option>一年级</option>
-                <option>二年级</option>
-                <option>三年级</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
             </select>
             <br>
         </div>
@@ -54,9 +54,9 @@
     <form>
         <div class="form-group">
             <select class="form-control" id="difficulty">
-                <option>简单</option>
-                <option>中等</option>
-                <option>困难</option>
+                <option>easy</option>
+                <option>middle</option>
+                <option>hard</option>
             </select>
             <br>
         </div>
@@ -65,8 +65,8 @@
     <form>
         <div class="form-group">
             <select class="form-control" id="mode">
-                <option>错题重做</option>
-                <option>普通测试</option>
+                <option>review</option>
+                <option>normal</option>
             </select>
             <br>
         </div>

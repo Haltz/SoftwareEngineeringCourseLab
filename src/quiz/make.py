@@ -1,17 +1,60 @@
 import json
 import random
 
-CONFIG_PATH = "../_config.json"
-config = json.load(open(CONFIG_PATH, 'r', encoding='utf-8'))
-# config = {
-#     "1": {
-#         "easy": {
-#             "ops": ["+", "-"],
-#             "opnum": 10,
-#             "interval": (1, 10)
-#         }
-#     }
-# }
+# CONFIG_PATH = "data/_config.json"
+config = {
+    "1": {
+        "easy": {
+            "opnum": 2,
+            "ops": ["+", "-"],
+            "interval": (1, 10)
+        },
+        "middle": {
+            "opnum": 3,
+            "ops": ["+", "-"],
+            "interval": (1, 10)
+        },
+        "hard": {
+            "opnum": 3,
+            "ops": ["+", "-"],
+            "interval": (1, 20)
+        }
+    },
+    "2": {
+        "easy": {
+            "opnum": 3,
+            "ops": ["+", "-"],
+            "interval": (1, 20)
+        },
+        "middle": {
+            "opnum": 4,
+            "ops": ["+", "-"],
+            "interval": (1, 30)
+        },
+        "hard": {
+            "opnum": 4,
+            "ops": ["+", "-"],
+            "interval": (20, 100)
+        }
+    },
+    "3": {
+        "easy": {
+            "opnum": 4,
+            "ops": ["+", "-"],
+            "interval": (20, 100)
+        },
+        "middle": {
+            "opnum": 4,
+            "ops": ["+", "-", "*"],
+            "interval": (1, 100)
+        },
+        "hard": {
+            "opnum": 5,
+            "ops": ["+", "-", "*"],
+            "interval": (20, 100)
+        }
+    },
+}
 
 
 def makeoneques(interval: list, ops: list, opnumber: int):
@@ -57,7 +100,8 @@ def makeoneques(interval: list, ops: list, opnumber: int):
 
 
 def testmakeoneques():
-    return makeoneques([1, 10], ['+', '-', '*'], 4)
+    print (makeoneques([1, 10], ['+', '-', '*'], 4))
+    return 0
 
 
 def makesuitques(grade: str, number: int, difficulty: str):
@@ -67,7 +111,7 @@ def makesuitques(grade: str, number: int, difficulty: str):
     ret = []
     for _ in range(number):
         ques = makeoneques(interval, ops, opnum)
-        while (ques["result"] < 0):
+        while (ques["result"] < 0 or ques["result"] >= 250):
             ques = makeoneques(interval, ops, opnum)
         ques = cut(ques)
         ret.append(ques)

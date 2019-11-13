@@ -8,15 +8,16 @@ if (url.indexOf('?') != -1) {
         urlparam[param[i].split('=')[0]] = param[i].split('=')[1];
     }
     urlparam.task = "request_question";
+    urlparam.username = $.cookie("username")
     $.ajax({
         type: "POST",
         url: "/questionanswer",
         data: urlparam,
         dataType: "json",
         success: function (response) {
-
+            console.log(response);
             for (var item in response) {
-                document.getElementById("questions").innerHTML = '<div><a class="" href="#">' + response[item] + '</a><a>答案:<input type="text" name="answer" style="width: 50px; background-color: inherit; border: 0"></a></div>' + document.getElementById("questions").innerHTML;
+                document.getElementById("questions").innerHTML += '<div><a class="" href="#">' + response[item] + '</a><a>答案:<input type="text" name="answer" style="width: 50px; background-color: inherit; border: 0"></a></div>';
             }
         }
     });
@@ -30,13 +31,15 @@ function alldone() {
     var answers = new Object();
     for (var i = 0; i < ret.length; i++) {
         var s = String(i);
-        if(ret[i].value == ""){
-            answers[s]="999999999";
+        if (ret[i].value == "") {
+            answers[s] = "999999999";
+        } else {
+            answers[s] = ret[i].value;
         }
-        else {answers[s] = ret[i].value;}
     }
-
     answers.task = "request_result";
+    answers.username = $.cookie("username");
+
     $.ajax({
         type: "POST",
         url: "/questionanswer",
@@ -48,7 +51,6 @@ function alldone() {
                 var info = "";
                 info += item;
                 info += " = " + response[item] + "\n";
-                alert(info);
                 document.getElementById("questions").innerHTML += '<div>\n' +
                     '\t\t\t\t\t\t\t\t<a class="" href="#">' + info + '</a>\n' +
                     '\t\t\t\t\t\t\t</div>'

@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Review</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{static_url('css/questionanswer.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{static_url('fonts/font-awesome-4.2.0/css/font-awesome.min.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{static_url('css/menu_sideslide.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{static_url('css/general.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{static_url('css/table.css')}}"/>
-    <script src="{{static_url('js/questionanswer_classie.js')}}"></script>
-    <script src="{{static_url('js/review.js')}}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/questionanswer.css') }}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{{ static_url('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/menu_sideslide.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/general.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/table.css') }}"/>
+    <script src="{{ static_url('js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ static_url('js/jquery.cookie.js') }}"></script>
+    <script src="{{ static_url('js/questionanswer_classie.js') }}"></script>
+    <script src="{{ static_url('js/review.js') }}"></script>
 </head>
 
 <body>
@@ -37,45 +41,46 @@
         </div>
         <div class="reviewcontainer" style="font-family: STXihei, '华文细黑', 'Microsoft YaHei', '微软雅黑';">
             <!-- <p style="width:100%; text-align: center; font-family: STXihei, '华文细黑', 'Microsoft YaHei', '微软雅黑'; font-size: 20px">个人信息</p> -->
-            <p
-                    style="width:100%; text-align: center; font-family: STXihei, '华文细黑', 'Microsoft YaHei', '微软雅黑'; font-size: 20px">
-                做题记录</p>
-            <table>
-                <thead>
-                <tr>
-                    <th>测试ID</th>
-                    <th>测试类型</th>
-                    <th>做题时间</th>
-                    <th>做题难度</th>
-                    <th>做题用时</th>
-                    <th>题数</th>
-                    <th>错题数</th>
-                    <th>正确率</th>
-                    <th>评级</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th>#1</th>
-                    <td>错题重做</td>
-                    <td>2019.10.12 10:32:16</td>
-                    <td>3年纪</td>
-                    <td>40min</td>
-                    <td>100</td>
-                    <td>10</td>
-                    <td>90%</td>
-                    <td>A</td>
-                </tr>
-                </tbody>
-            </table>
+            {#            <p#}
+            {#                    style="width:100%; text-align: center; font-family: STXihei, '华文细黑', 'Microsoft YaHei', '微软雅黑'; font-size: 20px">#}
+            {#                做题记录</p>#}
+            {#            <table>#}
+            {#                <thead>#}
+            {#                <tr>#}
+            {#                    <th>测试ID</th>#}
+            {#                    <th>测试类型</th>#}
+            {#                    <th>做题时间</th>#}
+            {#                    <th>做题难度</th>#}
+            {#                    <th>做题用时</th>#}
+            {#                    <th>题数</th>#}
+            {#                    <th>错题数</th>#}
+            {#                    <th>正确率</th>#}
+            {#                    <th>评级</th>#}
+            {#                </tr>#}
+            {#                </thead>#}
+            {#                <tbody>#}
+            {#                <tr>#}
+            {#                    <th>#1</th>#}
+            {#                    <td>错题重做</td>#}
+            {#                    <td>2019.10.12 10:32:16</td>#}
+            {#                    <td>3年纪</td>#}
+            {#                    <td>40min</td>#}
+            {#                    <td>100</td>#}
+            {#                    <td>10</td>#}
+            {#                    <td>90%</td>#}
+            {#                    <td>A</td>#}
+            {#                </tr>#}
+            {#                </tbody>#}
+            {#            </table>#}
             <p
                     style="width:100%; text-align: center; font-family: STXihei, '华文细黑', 'Microsoft YaHei', '微软雅黑'; font-size: 20px">
                 错题列表</p>
             <table>
                 <thead>
                 <tr>
-                    <th>测试ID</th>
+                    {#                    <th>测试ID</th>#}
                     <th>测试类型</th>
+                    <th>测试年级</th>
                     <th>错题难度</th>
                     <th>错误题目</th>
                     <th>错答</th>
@@ -84,12 +89,12 @@
                 </thead>
                 <tbody id="wrong_questions_body">
                 <tr>
-<!--                    <th>#1</th>-->
-<!--                    <td>错题重做</td>-->
-<!--                    <td>3年纪</td>-->
-<!--                    <td class="wrong_question_body">2 + __ = 8</td>-->
-<!--                    <td class="wrong_question_answer">5</td>-->
-<!--                    <td class="wrong_question_right_answer">6</td>-->
+                    <!--                    <th>#1</th>-->
+                    <!--                    <td>错题重做</td>-->
+                    <!--                    <td>3年纪</td>-->
+                    <!--                    <td class="wrong_question_body">2 + __ = 8</td>-->
+                    <!--                    <td class="wrong_question_answer">5</td>-->
+                    <!--                    <td class="wrong_question_right_answer">6</td>-->
                 </tr>
                 </tbody>
             </table>
@@ -97,7 +102,7 @@
     </div>
     <!-- /content-wrap -->
 </div>
-<script src="{{static_url('js/menuslide.js')}}"></script>
+<script src="{{ static_url('js/menuslide.js') }}"></script>
 </body>
 
 </html>

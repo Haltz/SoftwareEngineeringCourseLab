@@ -8,12 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <link rel="stylesheet" type="text/css" href="{{static_url('css/questionanswer.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{static_url('fonts/font-awesome-4.2.0/css/font-awesome.min.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{static_url('css/menu_sideslide.css')}}"/>
-    <script src="{{static_url('js/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{static_url('js/questionanswer_classie.js')}}"></script>
-    <script src="{{static_url('js/questions.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/questionanswer.css') }}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{{ static_url('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/menu_sideslide.css') }}"/>
+    <script src="{{ static_url('js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ static_url('js/jquery.cookie.js') }}"></script>
+    <script src="{{ static_url('js/questionanswer_classie.js') }}"></script>
+    <script src="{{ static_url('js/questions.js') }}"></script>
 </head>
 
 <body>
@@ -35,11 +37,13 @@
             <header class="questionanswer-header">
                 <h1>Children Learning <span>Learning Quickly</span></h1>
                 <div>
-					<nav class="questions" id="questions">
-<!--                        <div>-->
-<!--                            <a class="" href="#" onclick="alldone()">提交</a>-->
-<!--                        </div>-->
+                    <nav class="questions" id="questions">
+                        <!--                        <div>-->
+                        <!--                            <a class="" href="#" onclick="alldone()">提交</a>-->
+                        <!--                        </div>-->
                     </nav>
+                </div>
+                <div>
                     <nav class="questions" id="submit_answers">
                         <div>
                             <a class="" href="#" onclick="alldone()">提交</a>
@@ -52,7 +56,7 @@
     <!-- /content-wrap -->
 </div>
 <!-- /container -->
-<script src="{{static_url('js/menuslide.js')}}"></script>
+<script src="{{ static_url('js/menuslide.js') }}"></script>
 </body>
 
 </html>

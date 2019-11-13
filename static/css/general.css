@@ -1,5 +1,5 @@
 .relaxcontainer {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     padding-top: 10px;
     border-color: black;
@@ -7,14 +7,14 @@
 }
 
 .personcontainer {
-    width: 30%;
+    width: 100%;
     margin: 0 auto;
     padding-top: 10px;
     border-color: black;
 }
 
 .reviewcontainer {
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     padding-top: 10px;
     border-color: black;
