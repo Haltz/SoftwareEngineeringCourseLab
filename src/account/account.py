@@ -2,7 +2,7 @@ import json
 import os
 import random
 
-PATH = "data/account/"
+PATH = "data/account"
 
 
 def signup(username, email, passwd):
