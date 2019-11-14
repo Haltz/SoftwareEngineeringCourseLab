@@ -50,10 +50,9 @@ class LoginHandler(web.RequestHandler):
             print(name, passwd, task)
             if (account.login(name, passwd)):
                 self.write({"result": "success"})
-                return
             else:
                 self.write({"result": "failure"})
-                return
+
         if (task == "signup"):
             name = self.get_argument("name")
             passwd = self.get_argument("password")

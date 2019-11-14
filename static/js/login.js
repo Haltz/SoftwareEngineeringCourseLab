@@ -15,7 +15,8 @@ function login(param) {
                 alert("Login Success!");
                 $.cookie('username', username, {path: '/', expires: 30});
                 window.location.href = '/index';
-            } else {
+            }
+            else {
                 alert('Login failed. Please login again.');
                 window.location.href = '/login';
             }

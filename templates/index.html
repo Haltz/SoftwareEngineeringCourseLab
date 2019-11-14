@@ -5,9 +5,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="{{static_url('css/indexbase.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{static_url('css/indexdemo.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{static_url('fonts/font-awesome-4.2.0/css/font-awesome.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/indexbase.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ static_url('css/indexdemo.css') }}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{{ static_url('fonts/font-awesome-4.2.0/css/font-awesome.min.css') }}"/>
+    <script src="{{static_url('js/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{static_url('js/jquery.cookie.js')}}"></script>
+    <script src="{{ static_url('js/general.js') }}" type="text/javascript"></script>
 </head>
 
 <body class="gridmenu">
@@ -60,7 +64,7 @@
             <div class="grim__item-bg grim__item-bg--4"></div>
             <a class="grim__link grim__item-content">
                 <div class="grim__item-inner">
-                <button class="grim__item-title menu-trigger menu-trigger--close">- close</button>
+                    <button class="grim__item-title menu-trigger menu-trigger--close">- close</button>
                 </div>
             </a>
         </div>
@@ -122,9 +126,9 @@
 
     </nav>
 </main>
-<script src="{{static_url('js/index.js')}}"></script>
-<script src="{{static_url('js/anime.min.js')}}"></script>
-<script src="{{static_url('js/gridmenu.js')}}"></script>
+<script src="{{ static_url('js/index.js') }}"></script>
+<script src="{{ static_url('js/anime.min.js') }}"></script>
+<script src="{{ static_url('js/gridmenu.js') }}"></script>
 </body>
 
 </html>
